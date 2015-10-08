@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Example</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="../jquery.change-show-hide.js"></script>
+</head>
+<body>
+<p>
+  First Example<br>
+  <label for="FirstExample">
+    <input id="FirstExample" type="checkbox" class="changeshowhide" data-show-hide-target=".First"> First example
+  </label>
+</p>
+<div class="First">
+  <p>Lorem ipsum</p>
+</div>
+
+<p>
+  Second Example<br>
+  <label for="SecondExampleYes">
+    <input id="SecondExampleYes" name="SecondExample" type="radio" class="changeshowhide" data-show-hide-target=".Second" value="yes"> Yes
+  </label>
+  <label for="SecondExampleNo">
+    <input id="SecondExampleNo" name="SecondExample" type="radio" value="no" checked> No
+  </label>
+</p>
+<div class="Second">
+  <p>Lorem ipsum</p>
+</div>
+
+<p>
+  <label for="ThirdExample">Third Example</label><br>
+  <select name="ThirdExample" id="ThirdExample">
+    <option value="">Select One</option>
+    <option value="1" class="changeshowhide" data-show-hide-target=".This">Open This</option>
+    <option value="2" class="changeshowhide" data-show-hide-target=".That">Open That</option>
+  </select>
+</p>
+<div class="This">
+  <p>This Lorem ipsum</p>
+</div>
+<div class="That">
+  <p>That Lorem ipsum</p>
+</div>
+
+<p>
+  <label for="FourthExample">Fourth Example <input name="FourthExample" id="FourthExample" type="checkbox"></label>
+</p>
+<div class="FourthExample">
+  <p>Fourth Example Shown</p>
+</div>
+<script>
+$('#FourthExample').changeshowhide({
+  showHideTarget: '.FourthExample'
+});
+</script>
+</body>
+</html>

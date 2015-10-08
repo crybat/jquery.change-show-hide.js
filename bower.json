@@ -1,0 +1,28 @@
+{
+  "name": "jquery.change-show-hide.js",
+  "main": "jquery.change-show-hide.js",
+  "version": "0.0.0",
+  "authors": [
+    "Mauro Pinto <mauro.s.pinto@gmail.com>"
+  ],
+  "description": "Shows and hides elements based on input change events",
+  "moduleType": [],
+  "keywords": [
+    "show",
+    "hide"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "gulpfile.js",
+    "package.json"
+  ],
+  "homepage": "",
+  "devDependencies": {},
+  "dependencies": {
+    "jquery": "1"
+  }
+}
