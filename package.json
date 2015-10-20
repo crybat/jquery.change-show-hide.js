@@ -1,6 +1,6 @@
 {
   "name": "jquery.change-show-hide.js",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Shows and hides elements based on input change events",
   "main": "jquery.change-show-hide.js",
   "scripts": {
