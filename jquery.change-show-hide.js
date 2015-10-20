@@ -4,13 +4,14 @@
   var ChangeShowHide = function (element, options) {
     this.$element = $(element);
     this.options = $.extend({}, ChangeShowHide.DEFAULTS, options);
-    this.$target = $(options.showHideTarget || this.$element.data('show-hide-target'));
+    this.$onActiveTarget = $(options.onActiveTarget || this.$element.data('show-hide-active-target'));
+    this.$onInactiveTarget = $(options.onInactiveTarget || this.$element.data('show-hide-inactive-target'));
     this.init();
   };
 
   ChangeShowHide.DEFAULTS = {
-    afterDisable: function () {},
-    afterEnable: function () {}
+    afterInactive: function () {},
+    afterActive: function () {}
   };
 
   ChangeShowHide.prototype.init = function () {
@@ -20,13 +21,16 @@
 
   ChangeShowHide.prototype.updateItems = function () {
     var $element = this.$element;
-    var $target = this.$target;
+    var $onActiveTarget = this.$onActiveTarget;
+    var $onInactiveTarget = this.$onInactiveTarget;
     if (isElementActive($element)) {
-      $target.show();
-      this.options.afterEnable(this, $target);
+      $onActiveTarget.show();
+      $onInactiveTarget.hide();
+      this.options.afterActive(this, $onActiveTarget);
     } else {
-      $target.hide();
-      this.options.afterDisable(this, $target);
+      $onInactiveTarget.show();
+      $onActiveTarget.hide();
+      this.options.afterInactive(this, $onInactiveTarget);
     }
   };
 
