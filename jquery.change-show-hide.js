@@ -26,11 +26,11 @@
     if (isElementActive($element)) {
       $onActiveTarget.show();
       $onInactiveTarget.hide();
-      this.options.afterActive(this, $onActiveTarget);
+      this.options.afterActive($onActiveTarget, $onInactiveTarget, this);
     } else {
       $onInactiveTarget.show();
       $onActiveTarget.hide();
-      this.options.afterInactive(this, $onInactiveTarget);
+      this.options.afterInactive($onActiveTarget, $onInactiveTarget, this);
     }
   };
 

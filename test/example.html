@@ -58,7 +58,9 @@
 </script>
 
 <p>
-  <label for="ActiveInactiveCheckbox">Active or inactive object <input class="changeshowhide" data-show-hide-active-target=".OnActive" data-show-hide-inactive-target=".OnInactive" name="ActiveInactiveCheckbox" id="ActiveInactiveCheckbox" type="checkbox"></label>
+  <label for="ActiveInactiveCheckbox">
+    Active or inactive object. Also, add function for after active/inactive event.
+    <input data-show-hide-active-target=".OnActive" data-show-hide-inactive-target=".OnInactive" name="ActiveInactiveCheckbox" id="ActiveInactiveCheckbox" type="checkbox"></label>
 </p>
 <div class="OnActive">
   <p>Checkbox Checked</p>
@@ -66,5 +68,17 @@
 <div class="OnInactive">
   <p>Checkbox Unchecked</p>
 </div>
+<script>
+  $('#ActiveInactiveCheckbox').changeshowhide({
+    afterActive: function ($activeTarget, $inactiveTarget, plugin) {
+      console.log($activeTarget.attr('class'));
+      console.log($inactiveTarget.attr('class'));
+    },
+    afterInactive: function ($activeTarget, $inactiveTarget, plugin) {
+      console.log($activeTarget.attr('class'));
+      console.log($inactiveTarget.attr('class'));
+    }
+  });
+</script>
 </body>
 </html>
